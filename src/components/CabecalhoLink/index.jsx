@@ -3,23 +3,24 @@
 // ***********************************
 
 import React from "react";
-import ReactDOM from "react-dom/client";
 
 // ***********************************
 // |          Import Css             |
 // ***********************************
 
-import "./index.css";
+import styles from "./CabecalhoLink.module.css";
 
 // ***********************************
-// |       Import Componentes        |
+// |     Import React-router-dom     |
 // ***********************************
+import { Link } from "react-router-dom";
 
-import AppRoutes from "routes";
+const CabecalhoLink = ({ url, children }) => {
+    return (
+        <Link to={url} className={styles.link}>
+            {children}
+        </Link>
+    );
+};
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-    <React.StrictMode>
-        <AppRoutes />
-    </React.StrictMode>
-);
+export default CabecalhoLink;
